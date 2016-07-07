@@ -1,4 +1,5 @@
-This is an attempt to covnert the booleannet package to Python3. All the text in the README below is for the [Python2 version from the original author](https://github.com/ialbert/booleannet). 
+**This is an attempt to convert the booleannet package to Python3. All the text in the README below is for the [Python2 version from the original author](https://github.com/ialbert/booleannet).**
+
 
 Boolean Network Modeling
 ========================
