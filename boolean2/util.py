@@ -18,12 +18,12 @@ def join( data, sep="\t", patt="%s\n"):
 
 def error(msg):
     "Prints an error message and stops"
-    print(('*** error: %s' % msg))
+    print('*** error: %s' % msg)
     sys.exit()
 
 def warn(msg):
     "Prints a warning message"
-    print(('*** warning: %s' % msg))
+    print('*** warning: %s' % msg)
  
 def tuple_to_bool( value ):
     """

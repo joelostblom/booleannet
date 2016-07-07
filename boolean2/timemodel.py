@@ -82,4 +82,4 @@ if __name__ == '__main__':
         tstamp = 'T=%d ' % t
         data = [ tstamp ] + list(map(int, (state.A, state.B, state.C, state.D)))
         data = list(map(str, data))
-        print(('\t'.join(data)))
+        print('\t'.join(data))

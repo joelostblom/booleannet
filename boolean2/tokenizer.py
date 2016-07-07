@@ -232,6 +232,6 @@ if __name__ == '__main__':
 
     """
     
-    print((modify_states( text, turnon=['A', 'B'], turnoff=['C'] )))
+    print(modify_states( text, turnon=['A', 'B'], turnoff=['C'] ))
 
     

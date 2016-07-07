@@ -61,7 +61,7 @@ def test():
     model.initialize(  )
     model.iterate( steps=10, fullt=2)
     
-    print((all_nodes ( text )))
+    print(all_nodes ( text ))
     #for i in range(12):
     #    print model.next()
 
