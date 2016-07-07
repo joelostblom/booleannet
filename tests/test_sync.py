@@ -81,7 +81,8 @@ class SyncTest( testbase.TestBase ):
         """
 
         # valid nodes
-        nodes  = string.uppercase[:]
+        #nodes  = string.uppercase[:]
+        nodes  = string.ascii_uppercase
         join = testbase.join
 
         #
@@ -113,7 +114,7 @@ class SyncTest( testbase.TestBase ):
             # insert some parentheses
             if randint(1, 100) > 30:
                 for i in range(2):
-                    half = size/2
+                    half = int(size/2) #size/2
                     left, right = randint(0, half), randint(half, size)
                     targets[left]  = '(' + targets[left]
                     targets[right] = targets[right] + ')'
@@ -152,9 +153,9 @@ class SyncTest( testbase.TestBase ):
         # execute the code in python for a number of steps
         # having too many steps is actually counterproductive as it falls into a steady state
         steps = 4
-        exec init_text
+        exec(init_text)
         for i in range( steps ):
-            exec py_text in locals()
+            exec(py_text, locals())
         
         # see the full text here
         #print full_text

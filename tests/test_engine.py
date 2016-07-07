@@ -115,10 +115,10 @@ class EngineTest( unittest.TestCase ):
             funcs  = [ partial( get, attr=attr ) for attr in 'ABC' ]
 
             # map to the data
-            values = [ map( f, states ) for f in funcs ]
+            values = [ list(map( f, states )) for f in funcs ]
             
             # filter for true value
-            trues  = [ filter ( istrue, v) for v in values ]
+            trues  = [ list(filter ( istrue, v)) for v in values ]
 
             # true values 
             A, B, C = trues
@@ -208,9 +208,9 @@ class EngineTest( unittest.TestCase ):
         # execute the code in python for a number of steps
         # having too many steps is bad as it falls into a steady state
         steps = 4
-        exec init_text
+        exec(init_text)
         for i in range( steps ):
-            exec py_text in locals()
+            exec(py_text, locals())
         
         # see the full text here
         #print full_text
