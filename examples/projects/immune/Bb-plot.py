@@ -13,7 +13,7 @@ def skip( data, step=10):
         return data[::step]
     
     out = dict()
-    for key, values in data.items():
+    for key, values in list(data.items()):
         values = values[::step]
         out[key] = values
     return out

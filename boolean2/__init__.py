@@ -6,7 +6,8 @@ import sys, re, os
 
 __VERSION__ = '1.2.0-beta'
 
-from . import util
+#from . import util
+import boolean2.util
 
 # require python 2.4 or higher
 if sys.version_info[:2] < (2, 5):
@@ -16,12 +17,14 @@ from . import ruleparser, boolmodel, timemodel, tokenizer
 
 from .tokenizer import modify_states
 
-def Model( text, mode):
+def Model(text, mode):
     "Factory function that returns the proper class based on the mode"
 
     # the text parameter may be a file that contains the rules
     if os.path.isfile( text ):
-        text = file(text, 'rt').read()
+        #text = file(text, 'rt').read()
+        text = open(text, 'rt').read()
+        print("+++++")
 
     # check the validity of modes
     if mode not in ruleparser.VALID_MODES:
@@ -58,7 +61,7 @@ def test():
     model.initialize(  )
     model.iterate( steps=10, fullt=2)
     
-    print(all_nodes ( text ))
+    print((all_nodes ( text )))
     #for i in range(12):
     #    print model.next()
 

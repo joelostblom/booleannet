@@ -4,7 +4,7 @@ from itertools import count
 
 try:
     import networkx
-    from networkx import component
+    from networkx import components
 except ImportError:
     util.error( "networkx is missing, install it from https://networkx.lanl.gov/")
 
@@ -24,15 +24,16 @@ def component_colormap(graph):
     colors = [ ORANGE, SPRING_GREEN, GOLD, TEAL, PURPLE, NAVY, SIENNA, CRIMSON, BLUE, ]
     
     # find the strongly connected components
-    components = component.strongly_connected_components( graph )
+    components2 = components.strongly_connected_components( graph )
     
     # make sure we have as many colors as components
-    if len(colors) < len(components):
-        util.warn( 'there are more components than colors!' )
+    ##print( components2 )
+    ##if len(colors) < len(components2):
+    ##    util.warn( 'there are more components than colors!' )
 
     # create the colormap
     colormap = {}
-    for color, comp in  zip(colors, components):
+    for color, comp in  zip(colors, components2):
         for node in comp:
             colormap[node] = color
     return colormap

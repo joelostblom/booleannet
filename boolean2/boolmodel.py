@@ -126,11 +126,11 @@ class BoolModel(Parser):
         index, size = self.detect_cycles()
         
         if size == 0:
-            print("No cycle or steady state could be detected from the %d states" % len(self.states))
+            print(("No cycle or steady state could be detected from the %d states" % len(self.states)))
         elif size==1:
-            print("Steady state starting at index %s -> %s" % (index, self.states[index] ))
+            print(("Steady state starting at index %s -> %s" % (index, self.states[index] )))
         else:
-            print("Cycle of length %s starting at index %s" % (size, index))
+            print(("Cycle of length %s starting at index %s" % (size, index)))
     
     def fp(self):
         "The models current fingerprint"
@@ -154,18 +154,18 @@ if __name__ == '__main__':
 
     model.initialize(  )
         
-    print('>>>', model.first)
+    print(('>>>', model.first))
 
     model.iterate( steps=2 )
     
-    print(model.fp())
+    print((model.fp()))
     model.report_cycles()
     model.save_states( fname='states.txt' )
 
     # detect cycles from a list of states
     states = ['S1', 'S2', 'S1', 'S2', 'S1', 'S2']
     print() 
-    print('States %s -> Detect cycles %s' % (states, util.detect_cycles( states ) ))
+    print(('States %s -> Detect cycles %s' % (states, util.detect_cycles( states ) )))
 
 
        

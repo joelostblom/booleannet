@@ -4,8 +4,9 @@ Main tokenizer.
 from itertools import *
 import sys, random
 from . import util
-#from . import ply.lex as lex
+#import boolean2.util
 import ply.lex as lex
+
 
 class Lexer:
     """
@@ -231,6 +232,6 @@ if __name__ == '__main__':
 
     """
     
-    print(modify_states( text, turnon=['A', 'B'], turnoff=['C'] ))
+    print((modify_states( text, turnon=['A', 'B'], turnoff=['C'] )))
 
     
