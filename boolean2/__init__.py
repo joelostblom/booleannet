@@ -24,7 +24,6 @@ def Model(text, mode):
     if os.path.isfile( text ):
         #text = file(text, 'rt').read()
         text = open(text, 'rt').read()
-        print("+++++")
 
     # check the validity of modes
     if mode not in ruleparser.VALID_MODES:
