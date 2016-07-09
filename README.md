@@ -1,4 +1,26 @@
-**This is an attempt to convert the booleannet package to Python3. All the text in the README below is for the [Python2 version from the original author](https://github.com/ialbert/booleannet).**
+**This is an attempt to convert the booleannet package to Python3. All the text in the README below is for the [Python2 version from the original author](https://github.com/ialbert/booleannet).** To install and uninstall, use either 
+
+```bash
+# Install
+python setup.py install
+# Check if pip detected the install
+pip freeze | grep Bool
+# Uninstall
+pip uninstall BooleanNet
+```
+
+from [this](http://stackoverflow.com/a/12797865/2166823) SO answer, or
+
+```bash
+# Install
+python setup.py install --record recorded_files.txt
+# Check what files were installed
+cat recorded_files.txt
+# Uninstall by removeing all installed files 
+tr '\n' '\0' < files.txt | xargs -0 sudo rm -f --
+```
+
+as per [this](http://stackoverflow.com/a/25209129/2166823) SO answer.
 
 
 Boolean Network Modeling
